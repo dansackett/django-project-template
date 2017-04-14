@@ -1,2 +1,9 @@
 # django-project-template
-Multiple project starter templates for building a Django project
+
+Coming soon...
+
+Plans:
+
+- Make different branches point to different templates
+- Template ideas: Standard, Channels, React, Rest Framework
+- Use latest and greatest stuff (out with Gulp and in with Webpack)
