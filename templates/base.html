@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}{{ project_name }}{% endblock title %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- third-party styles -->
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.7.0/css/tachyons.min.css"/>
+    <link href="{% static 'vendor/css/normalize.css' %}" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- app styles -->
+    <link href="{% static 'css/app.css' %}" rel="stylesheet">
+
+    <!-- Allow extra inline CSS in a template -->
+    {% block extra_css %}{% endblock extra_css %}
+  </head>
+
+  <body class="washed-green bg-purple">
+
+    {% include 'partials/nav.html' %}
+
+    <article class="pa3 pa5-ns">
+      <h1 class="f3 f1-m f-headline-l">
+        {% block page_title %}Django Project Template{% endblock page_title %}
+      </h1>
+      {% block content %}
+      <p class="measure lh-copy">
+        So you're starting a new Django project? You've come to the right
+        place! This project template aims at making your start as quick and
+        painless as possible so you can start writing your application instead
+        of the boilerplate. Settings, basic templates, authentication, and
+        authorization have all been implemented and tested so you can hit the
+        ground running.
+      </p>
+
+      <h2 class="f4 bold mw6">Things you'll get out of the box:</h2>
+
+      <div>
+        <ul class="list pl0 measure">
+          <li class="lh-copy pv3 ba bl-0 bt-0 br-0 b--dotted b--black-30">
+            Django 1.11 is used to ensure you're using the latest and greatest
+            djangoproject has to offer.
+          </li>
+          <li class="lh-copy pv3 ba bl-0 bt-0 br-0 b--dotted b--black-30">
+            Python 3 is used with compliant code for a Python 2 project.
+          </li>
+          <li class="lh-copy pv3 ba bl-0 bt-0 br-0 b--dotted b--black-30">
+            Basic authentication with user profiles and avatars and
+            autorization including user groups and permissions are all
+            implemented. Try registering in the top right corner to see.
+          </li>
+          <li class="lh-copy pv3">
+            Translation support is ready to go as all strings are translatable
+            by default.
+          </li>
+        </ul>
+      </div>
+      {% endblock content %}
+    </article>
+
+    <!-- javascripts
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{% static 'js/app.js' %}"></script>
+
+    {% block extra_js %}{% endblock extra_js %}
+  </body>
+</html>

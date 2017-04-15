@@ -1,0 +1,12 @@
+{
+  "name": "django-project-template",
+  "version": "0.0.1",
+  "description": "An opinionated starter kit for a new Django project",
+  "main": "index.js",
+  "repository": {
+    "url": "https://github.com/dansackett/django-project-template",
+    "type": "git"
+  },
+  "author": "Dan Sackett",
+  "license": "MIT"
+}

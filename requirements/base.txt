@@ -1,0 +1,4 @@
+Django==1.11
+django-extensions==1.7.8
+whitenoise==3.3.0
+Pillow==4.1.0
