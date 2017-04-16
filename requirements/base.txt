@@ -1,4 +1,7 @@
 Django==1.11
 django-extensions==1.7.8
+django-toolset==0.1.5
+django-crispy-forms==1.6.1
+django-registration-redux==1.5
 whitenoise==3.3.0
 Pillow==4.1.0

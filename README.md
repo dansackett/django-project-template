@@ -28,9 +28,10 @@ Some of the features included out of the box are:
 ## TODO
 
 - [X] Setup basic structure of application including server and settings
-- [ ] Build basic user profile and permission models
-- [ ] Build basic auth flow
-- [ ] Write templates for auth flow
+- [X] Build basic user profile
+- [ ] Build easier permission management
+- [X] Build basic auth flow
+- [X] Write templates for auth flow
 - [ ] Implement frontend build system for JS and custom CSS
   [ ] Write tests
-  [ ] Write deployment files and test deployment with Docker, Vagrant, and stock servers 
+  [ ] Write deployment files and test deployment with Docker, Vagrant, and stock servers

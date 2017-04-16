@@ -18,7 +18,13 @@ from django.conf.urls import url, include
 from django.views.generic import TemplateView
 
 urlpatterns = [
-    url(r'^$', TemplateView.as_view(template_name='base.html')),
+    url(r'^$', TemplateView.as_view(template_name='base.html'), name='home'),
+
+    # registation URLs
+    url(r'^', include('registration.backends.default.urls')),
+
+    # account specific URLs
+    url('^', include('accounts.urls')),
 
     # enabled for now but should be disabled if not used
     url(r'^admin/', admin.site.urls),

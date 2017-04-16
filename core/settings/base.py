@@ -29,6 +29,15 @@ TEMPLATES_DIR = os.path.join(ROOT_DIR, 'templates')
 # add the apps directory to the PATH
 sys.path.insert(0, os.path.join(APPS_DIR))
 
+# set the name of the website here
+SITE_NAME = 'Django Project Template'
+
+ADMINS = [
+    ('Dwight Shrute', 'dwight@dundermiflin.com'),
+]
+
+MANAGERS = ADMINS
+
 # application definition
 DJANGO_APPS = [
     'django.contrib.admin',
@@ -37,10 +46,13 @@ DJANGO_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
 ]
 
 THIRD_PARTY_APPS = [
     'django_extensions',
+    'crispy_forms',
+    'registration',
 ]
 
 LOCAL_APPS = [
@@ -105,3 +117,15 @@ STATICFILES_DIRS = (
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(MEDIA_DIR)
+
+# Django app config
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+DEFAULT_FROM_EMAIL = 'dwight@dundermiflin.com'
+
+# third party setup
+ACCOUNT_ACTIVATION_DAYS = 7
+REGISTRATION_DEFAULT_FROM_EMAIL = 'noreply@example.com'
+INCLUDE_REGISTER_URL = True
+INCLUDE_AUTH_URLS = True

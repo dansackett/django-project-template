@@ -3,4 +3,4 @@
 from .dev import *
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ''
+SECRET_KEY = r"{{ secret_key }}"
