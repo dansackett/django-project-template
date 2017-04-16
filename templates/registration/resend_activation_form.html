@@ -6,9 +6,9 @@
 
 {% block content %}
 <form class="measure" method="post" action="">
-    {% csrf_token %}
-    {{ form | crispy }}
-    <input type="submit" value="{% trans 'Submit' %}" />
+  {% csrf_token %}
+  {{ form | crispy }}
+  <input type="submit" value="{% trans 'Submit' %}" />
 </form>
 {% endblock %}
 
@@ -19,8 +19,8 @@ Used to show the form users will fill out to resend the activation email. By
 default, has the following context:
 
 ``form``
-    The registration form. This will be an instance of some subclass
-    of ``django.forms.Form``; consult `Django's forms documentation
-    <http://docs.djangoproject.com/en/dev/topics/forms/>`_ for
-    information on how to display this in a template.
+  The registration form. This will be an instance of some subclass
+  of ``django.forms.Form``; consult `Django's forms documentation
+  <http://docs.djangoproject.com/en/dev/topics/forms/>`_ for
+  information on how to display this in a template.
 {% endcomment %}

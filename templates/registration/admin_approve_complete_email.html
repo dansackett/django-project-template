@@ -3,15 +3,15 @@
 <html lang="en">
 
 <head>
-    <title>{{ site.name }} {% trans "admin approval" %}</title>
+  <title>{{ site.name }} {% trans "admin approval" %}</title>
 </head>
 
 <body>
 <p>
-    {% blocktrans %}
-    Your account is now approved. You can 
-    {% endblocktrans %}
-    <a href="http://{{site.domain}}{% url 'login' %}">{% trans "log in." %}</a>
+  {% blocktrans %}
+  Your account is now approved. You can 
+  {% endblocktrans %}
+  <a href="http://{{site.domain}}{% url 'login' %}">{% trans "log in." %}</a>
 </p>
 </body>
 

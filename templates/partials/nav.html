@@ -1,18 +1,18 @@
 {% load static %}
 <nav class="db dt-l w-100 border-box pa3 ph5-l">
   <a class="db dtc-l v-mid washed-green link dim w-100 w-25-l tc tl-l mb2 mb0-l" href="{% url 'home' %}" title="Home">
-    <img src="{% static '/images/logo.png' %}" class="dib w2 h2 br-100" alt="Django Project Template">
+  <img src="{% static '/images/logo.png' %}" class="dib w2 h2 br-100" alt="Django Project Template">
   </a>
   <div class="db dtc-l v-mid w-100 w-75-l tc tr-l">
-    <a class="link dim washed-green f6 f5-l dib mr3 mr4-l" href="{% url 'home' %}" title="Home">Home</a>
-    {% if user.is_authenticated %}
-    <form method="post" action="{% url 'auth_logout' %}">
-      {% csrf_token %}
-      <button type="submit">Logout</button>
-    </form>
-    {% else %}
-    <a class="link dim washed-green f6 f5-l dib mr3 mr4-l" href="{% url 'registration_register' %}" title="Register">Register</a>
-    <a class="link dim washed-green f6 f5-l dib" href="{% url 'auth_login' %}" title="Contact">Login</a>
-    {% endif %}
+  <a class="link dim washed-green f6 f5-l dib mr3 mr4-l" href="{% url 'home' %}" title="Home">Home</a>
+  {% if user.is_authenticated %}
+  <form method="post" action="{% url 'auth_logout' %}">
+    {% csrf_token %}
+    <button type="submit">Logout</button>
+  </form>
+  {% else %}
+  <a class="link dim washed-green f6 f5-l dib mr3 mr4-l" href="{% url 'registration_register' %}" title="Register">Register</a>
+  <a class="link dim washed-green f6 f5-l dib" href="{% url 'auth_login' %}" title="Contact">Login</a>
+  {% endif %}
   </div>
 </nav>
