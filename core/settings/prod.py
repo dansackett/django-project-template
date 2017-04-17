@@ -70,3 +70,10 @@ LOGGING = {
 
 # cache and compress static files
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        'BUNDLE_DIR_NAME': 'static/bundles/',
+        'STATS_FILE': os.path.join(ROOT_DIR, 'webpack-stats-prod.json'),
+    }
+}

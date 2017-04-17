@@ -32,6 +32,6 @@ Some of the features included out of the box are:
 - [X] Build easier permission management
 - [X] Build basic auth flow
 - [X] Write templates for auth flow
-- [ ] Implement frontend build system for JS and custom CSS
+- [X] Implement frontend build system for JS and custom CSS
 - [ ] Write tests
 - [ ] Write deployment files and test deployment with Docker, Vagrant, and stock servers

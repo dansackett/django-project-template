@@ -46,6 +46,12 @@ form.measure .control-group {
   margin-bottom: 10px;
 }
 
+.btn-link {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
 .forgot-password-link {
   float: right;
   margin-top: 10px;

@@ -51,3 +51,10 @@ LOGGING = {
         },
     },
 }
+
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        'BUNDLE_DIR_NAME': 'static/bundles/',
+        'STATS_FILE': os.path.join(ROOT_DIR, 'webpack-stats.json'),
+    }
+}

@@ -53,6 +53,7 @@ THIRD_PARTY_APPS = [
     'django_extensions',
     'crispy_forms',
     'registration',
+    'webpack_loader',
 ]
 
 LOCAL_APPS = [

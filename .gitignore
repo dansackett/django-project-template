@@ -92,6 +92,8 @@ db.sqlite3
 
 # JS
 node_modules/
+.yarnclean
+webpack-stats*
 
 # Django
 dist/

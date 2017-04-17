@@ -6,9 +6,9 @@
   <div class="db dtc-l v-mid w-100 w-75-l tc tr-l">
   <a class="link dim washed-green f6 f5-l dib mr3 mr4-l" href="{% url 'home' %}" title="Home">Home</a>
   {% if user.is_authenticated %}
-  <form method="post" action="{% url 'auth_logout' %}">
+  <form class="dib" method="post" action="{% url 'auth_logout' %}">
     {% csrf_token %}
-    <button type="submit">Logout</button>
+    <button class="btn-link link dim washed-green f6 f5-l dib" type="submit">Logout</button>
   </form>
   {% else %}
   <a class="link dim washed-green f6 f5-l dib mr3 mr4-l" href="{% url 'registration_register' %}" title="Register">Register</a>
