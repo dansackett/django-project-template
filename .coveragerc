@@ -2,10 +2,10 @@
 [run]
 branch = True
 omit =
-    {{project_name}}/core/apps/*/migrations/*
-    {{project_name}}/core/apps/*/tests/*
-    {{project_name}}/core/apps/*/apps.py
-    {{project_name}}/core/apps/*/urls.py
+    core/apps/*/migrations/*
+    core/apps/*/tests/*
+    core/apps/*/apps.py
+    core/apps/*/urls.py
 
 [report]
 show_missing = True

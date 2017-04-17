@@ -28,12 +28,6 @@
 
   {% include 'partials/nav.html' %}
 
-  {% if groups.Admin %}
-  in group
-  {% else %}
-  not in group
-  {% endif %}
-
   <article class="pa3 pa5-ns">
     <h1 class="f3 f1-m f-headline-l">
     {% block page_title %}{{ SITE_NAME }}{% endblock page_title %}
