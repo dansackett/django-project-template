@@ -29,7 +29,7 @@ Some of the features included out of the box are:
 
 - [X] Setup basic structure of application including server and settings
 - [X] Build basic user profile
-- [ ] Build easier permission management
+- [X] Build easier permission management
 - [X] Build basic auth flow
 - [X] Write templates for auth flow
 - [ ] Implement frontend build system for JS and custom CSS
