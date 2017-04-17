@@ -20,7 +20,7 @@ ROOT_DIR = os.path.dirname(CORE_DIR)
 
 # useful paths
 APPS_DIR = os.path.join(CORE_DIR, 'apps')
-LOGS_DIR = os.path.join(CORE_DIR, 'logs')
+LOGS_DIR = os.path.join(ROOT_DIR, 'logs')
 MEDIA_DIR = os.path.join(ROOT_DIR, 'media')
 DIST_DIR = os.path.join(ROOT_DIR, 'dist')
 STATIC_DIR = os.path.join(ROOT_DIR, 'static')

@@ -8,26 +8,27 @@
     "type": "git"
   },
   "scripts": {
-    "build-dev": "rm -rf static/bundles/ && webpack --config webpack.config.js --progress",
-    "build-prod": "rm -rf static/bundles/ && webpack --config webpack.prod.config.js --progress",
-    "watch-dev": "rm -rf static/bundles/ && webpack-dev-server --host 0.0.0.0 --port 45537 --config webpack.dev.config.js --progress --colors",
-    "start": "concurrently --kill-others \"python manage.py runserver\" \"yarn watch-dev\""
+    "build-dev": "NODE_ENV=development webpack --progress --colors",
+    "build-prod": "NODE_ENV=production webpack --progress --colors",
+    "watch-dev": "NODE_ENV=watch webpack-dev-server --host 0.0.0.0 --port 45537 --progress --colors",
+    "start": "concurrently --kill-others 'python manage.py runserver' 'yarn watch-dev'"
   },
   "author": "Dan Sackett",
   "license": "MIT",
-  "dependencies": {
-    "tachyons": "^4.7.0"
-  },
   "devDependencies": {
+    "autoprefixer": "^6.7.7",
     "babel": "^6.23.0",
     "babel-core": "^6.24.1",
     "babel-loader": "^6.4.1",
     "babel-preset-es2015": "^6.24.1",
     "browser-sync": "^2.18.8",
     "browser-sync-webpack-plugin": "^1.1.4",
+    "clean-webpack-plugin": "^0.1.16",
     "concurrently": "^3.4.0",
     "css-loader": "^0.28.0",
+    "cssnano": "^3.10.0",
     "extract-text-webpack-plugin": "^2.1.0",
+    "postcss-loader": "^1.3.3",
     "style-loader": "^0.16.1",
     "webpack": "^2.4.1",
     "webpack-bundle-tracker": "^0.2.0",

@@ -1,4 +1,4 @@
-# GroupWrapper and GroupLookupDict proxy the groups system into objects that
+# GroupLookupDict proxy the groups system into objects that
 # the template system can understand.
 
 
@@ -16,23 +16,6 @@ class GroupLookupDict:
         raise TypeError("GroupLookupDict is not iterable.")
 
 
-class GroupWrapper:
-    def __init__(self, user):
-        self.user = user
-
-    def __getitem__(self, group_name):
-        return GroupLookupDict(self.user)
-
-    def __iter__(self):
-        raise TypeError("GroupWrapper is not iterable.")
-
-    def __contains__(self, group_name):
-        '''
-        lookup by "somegroup" in groups.
-        '''
-        return self[group_name]
-
-
 def groups(request):
     '''
     If there is no 'user' attribute in the request, use AnonymousUser (from
@@ -44,4 +27,4 @@ def groups(request):
         from django.contrib.auth.models import AnonymousUser
         user = AnonymousUser()
 
-    return { 'groups': GroupWrapper(user) }
+    return { 'groups': GroupLookupDict(user) }

@@ -6,9 +6,10 @@ ALLOWED_HOSTS = []
 
 ROOT_URLCONF = 'core.urls.dev'
 
-INSTALLED_APPS += [
+INSTALLED_APPS = [
     'debug_toolbar',
-]
+    'whitenoise.runserver_nostatic',
+] + INSTALLED_APPS
 
 MIDDLEWARE += [
     'debug_toolbar.middleware.DebugToolbarMiddleware',
