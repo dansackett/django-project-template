@@ -125,7 +125,7 @@ MEDIA_ROOT = os.path.join(MEDIA_DIR)
 
 # Django app config
 LOGIN_URL = '/login/'
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/dashboard/'
 LOGOUT_REDIRECT_URL = '/'
 DEFAULT_FROM_EMAIL = 'dwight@dundermiflin.com'
 

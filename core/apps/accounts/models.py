@@ -27,6 +27,17 @@ class User(AbstractBaseUser, PermissionsMixin):
         verbose_name = _('user')
         verbose_name_plural = _('users')
 
+    @property
+    def get_display_name(self):
+        '''
+        get a readable name for the UI
+        '''
+        if self.get_full_name().strip():
+            return self.get_full_name()
+        elif self.get_short_name().strip():
+            return self.get_short_name()
+        return self.email
+
     def get_full_name(self):
         '''
         returns the first_name plus the last_name, with a space in between.

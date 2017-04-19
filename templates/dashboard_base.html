@@ -4,7 +4,7 @@
 <html lang="en">
   <head>
   <meta charset="utf-8">
-  <title>{{ SITE_NAME }} &mdash; {% block title %}Home{% endblock title %}</title>
+  <title>{{ SITE_NAME }} &mdash; {% block title %}Dashboard{% endblock title %}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="{{ SITE_NAME }}">
   <meta name="author" content="Dan Sackett">
@@ -21,19 +21,19 @@
   {% block extra_css %}{% endblock extra_css %}
   </head>
 
-  <body class="bg-purple washed-green">
+  <body class="moon-gray bg-dark-blue">
 
     {% include 'partials/nav.html' %}
 
     <article class="pa3 pa5-ns">
 
       <h1 class="f3 f1-m f-headline-l">
-      {% block page_title %}{{ SITE_NAME }}{% endblock page_title %}
+      {% block page_title %}Dashboard{% endblock page_title %}
       </h1>
 
       {% block content %}
         <p class="measure lh-copy">
-          Hello, world!
+          Hello, {{ user.get_display_name }}!
         </p>
       {% endblock content %}
 

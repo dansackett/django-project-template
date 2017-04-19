@@ -18,7 +18,9 @@ from django.conf.urls import url, include
 from django.views.generic import TemplateView
 
 urlpatterns = [
-    url(r'^$', TemplateView.as_view(template_name='base.html'), name='home'),
+    # landing pages
+    url(r'^$', TemplateView.as_view(template_name='home.html'), name='home'),
+    url(r'^dashboard/$', TemplateView.as_view(template_name='dashboard_home.html'), name='dashboard'),
 
     # registation URLs
     url(r'^', include('registration.backends.default.urls')),

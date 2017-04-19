@@ -99,3 +99,4 @@ webpack-stats*
 dist/
 media/
 core/settings/local.py
+static/bundles/
