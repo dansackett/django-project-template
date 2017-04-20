@@ -10,7 +10,12 @@ config.plugins = config.plugins.concat([
       host: 'localhost',
       port: 3000,
       proxy: 'http://localhost:8000/',
-      notify: false
+      notify: false,
+      files: [
+        'templates/*.html',
+        'templates/**/*.html',
+        'core/apps/**/templates/*.html'
+      ]
     },
     {
       // prevent BrowserSync from reloading the page
