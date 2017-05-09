@@ -1,0 +1,17 @@
+{% load static %}
+{% load i18n %}
+<nav class="db dt-l w-100 border-box pa3 ph5-l">
+  <a class="db dtc-l v-mid washed-green link dim w-100 w-25-l tc tl-l mb2 mb0-l" href="{% url 'dashboard' %}" title="{% trans "Dashboard" %}">
+    <img src="{% static '/images/logo.png' %}" class="dib w2 h2 br-100" alt="{% trans "Django Project Template" %}">
+  </a>
+  <div class="db dtc-l v-mid w-100 w-75-l tc tr-l">
+    <a class="link dim washed-green f6 f5-l dib mr3 mr4-l" href="{% url 'dashboard' %}" title{% trans "Home" %}="">{% trans "Home" %}</a>
+  {% if user.is_superuserish %}
+  <a class="link dim washed-green f6 f5-l dib mr3 mr4-l" href="{% url 'users-list' %}" title="{% trans "Users" %}">{% trans "Users" %}</a>
+  {% endif %}
+  <form class="dib" method="post" action="{% url 'auth_logout' %}">
+    {% csrf_token %}
+    <button class="btn-link link dim washed-green f6 f5-l dib" type="submit">{% trans "Logout" %}</button>
+  </form>
+  </div>
+</nav>

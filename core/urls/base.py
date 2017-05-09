@@ -17,10 +17,12 @@ from django.contrib import admin
 from django.conf.urls import url, include
 from django.views.generic import TemplateView
 
+from core import views as landing_views
+
 urlpatterns = [
     # landing pages
     url(r'^$', TemplateView.as_view(template_name='home.html'), name='home'),
-    url(r'^dashboard/$', TemplateView.as_view(template_name='dashboard_home.html'), name='dashboard'),
+    url(r'^dashboard/$', landing_views.dashboard, name='dashboard'),
 
     # registation URLs
     url(r'^', include('registration.backends.default.urls')),

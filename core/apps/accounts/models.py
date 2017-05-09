@@ -1,6 +1,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from django.conf import settings
 from django.core.mail import send_mail
 from django.contrib.auth.models import PermissionsMixin, Group
 from django.contrib.auth.base_user import AbstractBaseUser
@@ -38,6 +39,13 @@ class User(AbstractBaseUser, PermissionsMixin):
             return self.get_short_name()
         return self.email
 
+    @property
+    def is_superuserish(self):
+        '''
+        determine if the user is a superuser based on role and group
+        '''
+        return self.is_superuser or self.belongs_to_group(settings.ADMIN_GROUP_NAME)
+
     def get_full_name(self):
         '''
         returns the first_name plus the last_name, with a space in between.
@@ -64,4 +72,4 @@ class User(AbstractBaseUser, PermissionsMixin):
         name = group_or_name
         if isinstance(group_or_name, Group):
             name = group_or_name.name
-        return Group.objects.filter(name=name).exists()
+        return self.groups.filter(name=name).exists()

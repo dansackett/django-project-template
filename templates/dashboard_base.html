@@ -23,20 +23,10 @@
 
   <body class="moon-gray bg-dark-blue">
 
-    {% include 'partials/nav.html' %}
+    {% include 'partials/authenticated_nav.html' %}
 
     <article class="pa3 pa5-ns">
-
-      <h1 class="f3 f1-m f-headline-l">
-      {% block page_title %}Dashboard{% endblock page_title %}
-      </h1>
-
-      {% block content %}
-        <p class="measure lh-copy">
-          Hello, {{ user.get_display_name }}!
-        </p>
-      {% endblock content %}
-
+      {% block content %}{% endblock content %}
     </article>
 
     <!-- javascripts

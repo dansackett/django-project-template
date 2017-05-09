@@ -1,0 +1,15 @@
+{% extends 'dashboard_base.html' %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+{% trans "Edit" %} {{ this_user.get_display_name }}
+
+<form class="measure" method="post" action="{% url 'user-edit' pk=user.pk %}">
+  {% csrf_token %}
+  {{ form | crispy }}
+  <input type="submit" value="{% trans 'Save' %}" />
+</form>
+
+{% endblock content %}

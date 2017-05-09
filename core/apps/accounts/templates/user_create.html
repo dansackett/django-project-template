@@ -1,0 +1,15 @@
+{% extends 'dashboard_base.html' %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+{% trans "Create New User" %}
+
+<form class="measure" method="post" action="{% url 'user-create' %}">
+  {% csrf_token %}
+  {{ form | crispy }}
+  <input type="submit" value="{% trans 'Submit' %}" />
+</form>
+
+{% endblock content %}

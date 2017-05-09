@@ -1,0 +1,61 @@
+{% extends 'dashboard_base.html' %}
+{% load i18n %}
+
+{% block content %}
+
+{% if user.is_superuserish %}
+<div class="pa4">
+  <div class="overflow-auto">
+    <table class="f6 w-100 mw8 center bg-white black-70" cellspacing="0">
+      <thead>
+        <tr class="stripe-dark">
+          <th class="fw6 tl pa3 bg-white">{% trans "ID" %}</th>
+          <th class="fw6 tl pa3 bg-white">{% trans "Name" %}</th>
+          <th class="fw6 tl pa3 bg-white">{% trans "Email" %}</th>
+          <th class="fw6 tl pa3 bg-white">{% trans "Groups" %}</th>
+          <th class="fw6 tl pa3 bg-white">{% trans "Active" %}</th>
+          <th class="fw6 tl pa3 bg-white"></th>
+        </tr>
+      </thead>
+      <tbody class="lh-copy">
+        {% for user in users %}
+        <tr class="bb b--black-20">
+          <td class="pa3">{{ user.id }}</td>
+          <td class="pa3">
+            {% if user.first_name %}
+              {{ user.first_name }} {{ user.last_name }}
+            {% else %}
+              &mdash;
+            {% endif %}
+          </td>
+          <td class="pa3">{{ user.email }}</td>
+          <td class="pa3">
+            {% with user.groups.all as user_groups %}
+            {% if user_groups %}
+              {{ user_groups.all|join:", " }}
+            {% else %}
+              &mdash;
+            {% endif %}
+            {% endwith %}
+          </td>
+          <td class="pa3">
+            {% if user.registrationprofile.activated %}
+            {% trans "Yes" %}
+            {% elif not user.registrationprofile and user.is_superuser %}
+            {% trans "Yes" %}
+            {% else %}
+            {% trans "No" %}
+            {% endif %}
+          </td>
+          <td class="pa3">
+            <a class="purple link dim" href="{% url 'user-single' user.pk %}" title="{% trans "Edit" %}">{% trans "Edit" %}</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endif %}
+
+{% endblock content %}

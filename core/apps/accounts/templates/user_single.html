@@ -1,0 +1,15 @@
+{% extends 'dashboard_base.html' %}
+{% load i18n %}
+
+{% block content %}
+
+{{ this_user.get_display_name }}
+
+<form class="dib" method="post" action="{% url 'user-delete' pk=user.pk %}">
+  {% csrf_token %}
+  <button class="btn-link link dim washed-green f6 f5-l dib" type="submit">{% trans "Delete" %}</button>
+</form>
+
+<a class="btn-link link dim washed-green" href="{% url 'user-edit' user.pk %}" title="{% trans "Edit" %}">{% trans "Edit" %}</a>
+
+{% endblock content %}

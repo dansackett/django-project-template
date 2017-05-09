@@ -11,7 +11,7 @@
     "build-dev": "NODE_ENV=development webpack --progress --colors",
     "build-prod": "NODE_ENV=production webpack --progress --colors",
     "watch-dev": "NODE_ENV=watch webpack-dev-server --host 0.0.0.0 --port 45537 --progress --colors",
-    "start": "concurrently --kill-others 'python manage.py runserver' 'yarn watch-dev'"
+    "start": "concurrently --kill-others 'python manage.py runserver_plus' 'yarn watch-dev'"
   },
   "author": "Dan Sackett",
   "license": "MIT",

@@ -7,7 +7,7 @@ class GroupLookupDict:
         self.user = user
 
     def __repr__(self):
-        return str([g.name for g in self.user.groups.all()])
+        return ', '.join(g.name for g in user.groups.all())
 
     def __getitem__(self, group_name):
         return self.user.belongs_to_group(group_name)

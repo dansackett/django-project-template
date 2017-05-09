@@ -1,1 +1,9 @@
 {% extends 'dashboard_base.html' %}
+
+{% block content %}
+
+<p class="measure lh-copy">
+  Hello, {{ user.get_display_name }}!
+</p>
+
+{% endblock content %}
