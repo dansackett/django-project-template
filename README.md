@@ -1,5 +1,7 @@
 # Django Project Template
 
+**NOTE:** Still in active development
+
 This project template is an opinionated boilerplate which will help you get
 started in Django very quickly. Some of the technology used include:
 
